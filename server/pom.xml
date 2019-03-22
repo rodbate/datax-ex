@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>datax-all</artifactId>
-        <groupId>com.globalegrow.datax</groupId>
+        <groupId>com.github.rodbate.datax</groupId>
         <version>1.0.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -21,13 +21,13 @@
     <dependencies>
 
         <dependency>
-            <groupId>com.globalegrow.datax</groupId>
+            <groupId>com.github.rodbate.datax</groupId>
             <artifactId>datax-common</artifactId>
             <version>${datax-project-version}</version>
         </dependency>
 
         <dependency>
-            <groupId>com.globalegrow.datax</groupId>
+            <groupId>com.github.rodbate.datax</groupId>
             <artifactId>datax-transport</artifactId>
             <version>${datax-project-version}</version>
         </dependency>

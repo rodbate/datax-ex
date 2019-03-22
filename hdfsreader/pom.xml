@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <groupId>com.globalegrow.datax</groupId>
+        <groupId>com.github.rodbate.datax</groupId>
         <artifactId>datax-all</artifactId>
         <version>1.0.0</version>
     </parent>
@@ -17,7 +17,7 @@
     </properties>
     <dependencies>
         <dependency>
-            <groupId>com.globalegrow.datax</groupId>
+            <groupId>com.github.rodbate.datax</groupId>
             <artifactId>datax-common</artifactId>
             <version>${datax-project-version}</version>
         </dependency>
@@ -78,7 +78,7 @@
         </dependency>
 
         <dependency>
-            <groupId>com.globalegrow.datax</groupId>
+            <groupId>com.github.rodbate.datax</groupId>
             <artifactId>plugin-unstructured-storage-util</artifactId>
             <version>${datax-project-version}</version>
         </dependency>
