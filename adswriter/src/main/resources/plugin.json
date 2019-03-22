@@ -1,0 +1,6 @@
+{
+    "name": "adswriter",
+    "class": "com.github.rodbate.datax.plugin.writer.adswriter.AdsWriter",
+    "description": "",
+    "developer": "alibaba"
+}

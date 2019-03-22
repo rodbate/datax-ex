@@ -1,0 +1,4 @@
+
+#spring application run listener
+org.springframework.boot.SpringApplicationRunListener=\
+com.github.rodbate.datax.server.config.web.BootApplicationRunListener

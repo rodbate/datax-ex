@@ -1,0 +1,6 @@
+{
+    "name": "mongodbreader",
+    "class": "com.github.rodbate.datax.plugin.reader.mongodbreader.MongoDBReader",
+    "description": "useScene: prod. mechanism: via mongoclient connect mongodb reader data concurrent.",
+    "developer": "alibaba"
+}

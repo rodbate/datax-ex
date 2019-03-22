@@ -1,0 +1,7 @@
+{
+    "name": "osswriter",
+    "class": "com.github.rodbate.datax.plugin.writer.osswriter.OssWriter",
+    "description": "",
+    "developer": "alibaba"
+}
+

@@ -1,0 +1,6 @@
+{
+  "name": "otsstreamreader",
+  "class": "com.github.rodbate.datax.plugin.reader.otsstreamreader.internal.OTSStreamReader",
+  "description": "",
+  "developer": "zhaofeng.zhou@alibaba-inc.com"
+}

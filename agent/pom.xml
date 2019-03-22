@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>datax-all</artifactId>
+        <groupId>com.globalegrow.datax</groupId>
+        <version>1.0.0</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>datax-agent</artifactId>
+    <name>datax-agent</name>
+    <packaging>jar</packaging>
+
+
+    <dependencies>
+        <dependency>
+            <groupId>com.globalegrow.datax</groupId>
+            <artifactId>datax-common</artifactId>
+            <version>${datax-project-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.globalegrow.datax</groupId>
+            <artifactId>datax-transport</artifactId>
+            <version>${datax-project-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+    </dependencies>
+
+
+    <build>
+        <finalName>datax-agent-${project.version}</finalName>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <excludes>
+                        <exclude>**/*.properties</exclude>
+                        <exclude>**/*.xml</exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+
+    <!-- profiles -->
+    <profiles>
+        <!-- development -->
+        <profile>
+            <id>dev</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <build>
+                <filters>
+                    <filter>${project.basedir}/conf/dev/dev.properties</filter>
+                </filters>
+
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-assembly-plugin</artifactId>
+                        <version>${maven.assembly.plugin.version}</version>
+                        <configuration>
+                            <appendAssemblyId>false</appendAssemblyId>
+                            <finalName>datax-agent-${project.version}</finalName>
+                            <descriptors>
+                                <descriptor>${project.basedir}/assembly/assembly.xml</descriptor>
+                            </descriptors>
+                            <filters>
+                                <filter>${project.basedir}/conf/dev/dev.properties</filter>
+                            </filters>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <id>assemble</id>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>single</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+
+        </profile>
+
+        <!-- test -->
+        <profile>
+            <id>test</id>
+            <build>
+                <filters>
+                    <filter>${project.basedir}/conf/test/test.properties</filter>
+                </filters>
+
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-assembly-plugin</artifactId>
+                        <version>${maven.assembly.plugin.version}</version>
+                        <configuration>
+                            <appendAssemblyId>false</appendAssemblyId>
+                            <finalName>datax-agent-${project.version}</finalName>
+                            <descriptors>
+                                <descriptor>${project.basedir}/assembly/assembly.xml</descriptor>
+                            </descriptors>
+                            <filters>
+                                <filter>${project.basedir}/conf/test/test.properties</filter>
+                            </filters>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <id>assemble</id>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>single</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+        <!-- production -->
+        <profile>
+            <id>prod</id>
+            <build>
+                <filters>
+                    <filter>${project.basedir}/conf/prod/prod.properties</filter>
+                </filters>
+
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-assembly-plugin</artifactId>
+                        <version>${maven.assembly.plugin.version}</version>
+                        <configuration>
+                            <appendAssemblyId>false</appendAssemblyId>
+                            <finalName>datax-agent-${project.version}</finalName>
+                            <descriptors>
+                                <descriptor>${project.basedir}/assembly/assembly.xml</descriptor>
+                            </descriptors>
+                            <filters>
+                                <filter>${project.basedir}/conf/prod/prod.properties</filter>
+                            </filters>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <id>assemble</id>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>single</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+
+</project>

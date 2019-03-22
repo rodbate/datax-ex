@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.globalegrow.datax</groupId>
+    <artifactId>datax-all</artifactId>
+    <version>1.0.0</version>
+
+    <name>datax-all</name>
+    <packaging>pom</packaging>
+
+
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+
+        <datax-project-version>1.0.0</datax-project-version>
+        <commons-lang3-version>3.3.2</commons-lang3-version>
+        <commons-configuration-version>1.10</commons-configuration-version>
+        <commons-cli-version>1.2</commons-cli-version>
+        <fastjson-version>1.1.46.sec01</fastjson-version>
+        <guava-version>16.0.1</guava-version>
+        <diamond.version>3.7.2.1-SNAPSHOT</diamond.version>
+
+        <slf4j-api-version>1.7.25</slf4j-api-version>
+        <logback-classic-version>1.2.3</logback-classic-version>
+        <commons-io-version>2.4</commons-io-version>
+        <junit-version>4.11</junit-version>
+        <tddl.version>5.1.22-1</tddl.version>
+        <swift-version>1.0.0</swift-version>
+        <netty.version>4.1.32.Final</netty.version>
+        <lombok.version>1.18.4</lombok.version>
+        <mockito.verison>2.23.4</mockito.verison>
+        <javatuples.version>1.2</javatuples.version>
+        <okhttp.version>3.12.1</okhttp.version>
+
+        <project-sourceEncoding>UTF-8</project-sourceEncoding>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
+
+        <java.version>1.8</java.version>
+        <maven.resources.plugin.version>3.1.0</maven.resources.plugin.version>
+        <maven.compiler.plugin.version>3.8.0</maven.compiler.plugin.version>
+        <maven.assembly.plugin.version>3.1.0</maven.assembly.plugin.version>
+        <maven.jar.plugin.version>3.1.1</maven.jar.plugin.version>
+    </properties>
+
+    <modules>
+        <module>common</module>
+        <module>core</module>
+        <module>transformer</module>
+        <module>transport</module>
+        <module>server</module>
+        <module>agent</module>
+
+        <!-- reader -->
+        <module>mysqlreader</module>
+        <module>drdsreader</module>
+        <module>sqlserverreader</module>
+        <module>postgresqlreader</module>
+        <module>oraclereader</module>
+        <module>odpsreader</module>
+        <module>otsreader</module>
+        <module>otsstreamreader</module>
+        <module>txtfilereader</module>
+        <module>hdfsreader</module>
+        <module>streamreader</module>
+        <module>ossreader</module>
+        <module>ftpreader</module>
+        <module>mongodbreader</module>
+        <module>rdbmsreader</module>
+        <module>hbase11xreader</module>
+        <module>hbase094xreader</module>
+
+        <!-- writer -->
+        <module>mysqlwriter</module>
+        <module>drdswriter</module>
+        <module>odpswriter</module>
+        <module>txtfilewriter</module>
+        <module>ftpwriter</module>
+        <module>hdfswriter</module>
+        <module>streamwriter</module>
+        <module>otswriter</module>
+        <module>oraclewriter</module>
+        <module>sqlserverwriter</module>
+        <module>postgresqlwriter</module>
+        <module>osswriter</module>
+        <module>mongodbwriter</module>
+        <module>adswriter</module>
+        <module>ocswriter</module>
+        <module>rdbmswriter</module>
+        <module>hbase11xwriter</module>
+        <module>hbase094xwriter</module>
+        <module>hbase11xsqlwriter</module>
+        <module>hbase11xsqlreader</module>
+        <module>elasticsearchwriter</module>
+
+        <!-- common support module -->
+        <module>plugin-rdbms-util</module>
+        <module>plugin-unstructured-storage-util</module>
+
+        <!-- distribution -->
+        <module>distribution</module>
+
+    </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${commons-lang3-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>${commons-io-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>${slf4j-api-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-classic</artifactId>
+                <version>${logback-classic-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit-version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.mockito</groupId>
+                <artifactId>mockito-all</artifactId>
+                <version>1.9.5</version>
+                <scope>test</scope>
+            </dependency>
+
+            <!-- netty all -->
+            <dependency>
+                <groupId>io.netty</groupId>
+                <artifactId>netty-all</artifactId>
+                <version>${netty.version}</version>
+            </dependency>
+
+            <!-- java tuples -->
+            <dependency>
+                <groupId>org.javatuples</groupId>
+                <artifactId>javatuples</artifactId>
+                <version>${javatuples.version}</version>
+            </dependency>
+
+            <!-- lombok -->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <!-- mockito -->
+            <dependency>
+                <groupId>org.mockito</groupId>
+                <artifactId>mockito-core</artifactId>
+                <version>${mockito.verison}</version>
+                <scope>test</scope>
+            </dependency>
+
+            <!-- okhttp -->
+            <dependency>
+                <groupId>com.squareup.okhttp3</groupId>
+                <artifactId>okhttp</artifactId>
+                <version>${okhttp.version}</version>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+
+
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <!-- resources plugin -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-resources-plugin</artifactId>
+                    <version>${maven.resources.plugin.version}</version>
+                    <configuration>
+                        <encoding>${project-sourceEncoding}</encoding>
+                    </configuration>
+                </plugin>
+
+                <!-- java compiler plugin -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>${maven.compiler.plugin.version}</version>
+                    <configuration>
+                        <source>${java.version}</source>
+                        <target>${java.version}</target>
+                        <encoding>${project-sourceEncoding}</encoding>
+                    </configuration>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-enforcer-plugin</artifactId>
+                    <version>3.0.0-M2</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-install-plugin</artifactId>
+                    <version>3.0.0-M1</version>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-jar-plugin</artifactId>
+                    <version>3.0.2</version>
+                </plugin>
+
+            </plugins>
+        </pluginManagement>
+
+
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-enforcer-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>enforce-maven</id>
+                        <goals>
+                            <goal>enforce</goal>
+                        </goals>
+                        <configuration>
+                            <rules>
+                                <requireMavenVersion>
+                                    <version>3.0</version>
+                                </requireMavenVersion>
+                            </rules>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

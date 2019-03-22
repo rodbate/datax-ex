@@ -1,0 +1,33 @@
+
+app:
+  env: @app.env@
+
+spring:
+  application:
+    name: @app.name@
+  jackson:
+    default-property-inclusion: non_null
+
+
+server:
+  port: @web.server.port@
+
+
+logging:
+  config: @log.config.file@
+
+
+datax:
+  transport:
+    host: @datax.transport.host@
+    port: @datax.transport.port@
+  job:
+    reportUrl: @datax.job.reportUrl@
+
+
+
+
+
+
+
+

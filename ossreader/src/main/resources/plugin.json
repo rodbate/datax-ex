@@ -1,0 +1,7 @@
+{
+    "name": "ossreader",
+    "class": "com.github.rodbate.datax.plugin.reader.ossreader.OssReader",
+    "description": "",
+    "developer": "alibaba"
+}
+
